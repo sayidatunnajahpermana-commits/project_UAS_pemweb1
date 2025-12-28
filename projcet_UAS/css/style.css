@@ -1,0 +1,105 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../img/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+main.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+:root {
+    --bs-success: #38761D; /* Hijau Tua Khas Organik */
+    --bs-success-rgb: 56, 118, 29;
+    --bs-light: #F7F7F7;
+    --bs-body-font-family: 'Poppins', sans-serif;
+}
+
+.btn-success, .bg-success, .text-success {
+    --bs-btn-bg: var(--bs-success);
+    --bs-btn-border-color: var(--bs-success);
+    --bs-btn-hover-bg: #4A902C; 
+    --bs-btn-active-bg: #4A902C; 
+}
+
+body {
+    font-family: var(--bs-body-font-family);
+    background-color: var(--bs-light);
+}
+
+.product-card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+/* Style untuk kuantitas selector */
+.quantity-selector input[type="text"] {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+}
+
+/* Style Khusus untuk Halaman */
+.hero-section {
+    background: url('../images/placeholder.png') no-repeat center center;
+    background-size: cover;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Query Sederhana untuk Modal di Mobile */
+@media (max-width: 768px) {
+    .product-modal-body .row > div {
+        padding-bottom: 20px;
+    }
+}
+/*CONTAINER BESAR */
+main.container {
+    background-color: #000; /* hitam */
+    padding: 40px 30px;
+    border-radius: 16px;
+}
+
+/* Judul & teks dalam container hitam */
+main.container h2,
+main.container h4,
+main.container label,
+main.container span {
+    color: #ffffff;
+}
+
+/*(CONTAINER KECIL)*/
+.card {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 12px;
+}
+
+/* Teks dalam card tetap gelap */
+.card h5,
+.card p,
+.card span {
+    color: #000;
+}
+
+

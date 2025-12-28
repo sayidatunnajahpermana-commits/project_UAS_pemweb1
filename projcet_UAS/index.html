@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCraft - Toko Produk Berkelanjutan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+            <div class="container">
+                <a class="navbar-brand text-success fw-bold fs-4" href="index.html">
+                    <i class="bi bi-recycle"></i> EcoCraft Store
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link fw-bold active text-success" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex">
+                                <a href="cart.html" class="btn btn-success" id="cart-btn">
+                    <i class="bi bi-bag"></i> (<span id="cart-count">0</span>)
+                </a>
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section mb-5">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Daur Ulang Adalah Gaya Hidup</h1>
+            <p class="lead">Temukan produk ramah lingkungan yang unik dan bernilai seni tinggi.</p>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <h2 class="text-center mb-4 text-success fw-bold">Pilih Produk EcoCraft Favorit Anda</h2>
+
+        <div class="d-flex justify-content-center mb-5 flex-wrap" id="category-filters">
+            <button class="btn btn-success btn-sm me-2 mb-2 active" data-category="all">Semua Produk</button>
+            <button class="btn btn-outline-success btn-sm me-2 mb-2" data-category="tas">Tas</button>
+            <button class="btn btn-outline-success btn-sm me-2 mb-2" data-category="selimut">Selimut</button>
+            <button class="btn btn-outline-success btn-sm me-2 mb-2" data-category="tempat-pencil">Tempat Pencil</button>
+            <button class="btn btn-outline-success btn-sm me-2 mb-2" data-category="tatakan-cangkir">Tatakan Cangkir</button>
+            <button class="btn btn-outline-success btn-sm me-2 mb-2" data-category="bingkai-kardus">Bingkai Kardus</button>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" id="product-grid">
+            </div>
+
+    </main>
+
+    <div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content product-modal-body">
+                <div class="modal-header"> 
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <img id="modal-product-image" src="" class="img-fluid rounded shadow-sm" alt="Product Image">
+                            <small class="d-block mt-2 text-muted">Bahan: Daur Ulang Pilihan</small>
+                        </div>
+                        <div class="col-md-6">
+                            <h2 class="fw-bold text-success" id="modal-product-title"></h2>
+                            <p class="lead fw-bold text-danger mb-4 fs-3" id="modal-product-price"></p>
+                            <h4 class="mt-4">Deskripsi Singkat</h4>
+                            <p id="modal-product-description" class="text-muted"></p>
+                            <hr>
+                            <div class="d-flex align-items-center mb-4">
+                                <label for="quantity-input" class="me-3 fw-bold">Kuantitas:</label>
+                                <div class="quantity-selector d-flex align-items-center">
+                                    <button class="btn btn-outline-secondary btn-sm" id="btn-minus"><i class="bi bi-dash"></i></button>
+                                    <input type="text" id="quantity-input" value="1" readonly class="form-control-sm text-center">
+                                    <button class="btn btn-outline-secondary btn-sm" id="btn-plus"><i class="bi bi-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="mb-4 p-3 bg-light rounded d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5 text-dark">Total Harga:</span>
+                                <span class="fw-bold fs-4 text-success" id="total-price-display">Rp 0.00</span>
+                            </div>
+                            <div class="d-grid gap-2 d-md-block">
+                                <button class="btn btn-success btn-lg px-5 me-md-2" type="button" id="add-to-cart-btn"><i class="bi bi-cart-plus me-1"></i> Tambah ke Keranjang</button>
+                                <button class="btn btn-outline-dark btn-lg px-5" type="button" id="buy-now-btn"> <i class="bi bi-bag-fill me-1"></i> Beli Sekarang</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; design by mufaridadnan 2025.</p>
+            <div>
+                <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
